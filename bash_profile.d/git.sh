@@ -4,11 +4,11 @@ alias gi='git init && printf ".DS_Store\nThumbs.db\n" >> .gitignore && git add .
 
 
 # http://www.jukie.net/~bart/blog/pimping-out-git-log
-alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%an %cr)%Creset' --abbrev-commit --date=relative"
-alias glp='gl -p'
-alias glm="gl master..."
+alias glo="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%an %cr)%Creset' --abbrev-commit --date=relative"
+alias glop='gl -p'
+alias glom="gl master..."
 
-alias gs='git status'
+alias gst='git status'
 alias gd='git diff'
 complete -o default -o nospace -F _git_diff gd
 alias gds='git diff --cached'
@@ -29,9 +29,11 @@ alias gco="git checkout"
 complete -o default -o nospace -F _git_checkout gco
 alias gcop="git checkout -p"
 
-alias gp='git pull --rebase || (notify "pull failed" "Git" && false)'
-alias gu='git push origin HEAD || (notify "push failed" "Git" && false)'
-alias gpru='gp && rake && gu'
+#alias gp='git pull --rebase || (notify "pull failed" "Git" && false)'
+alias gl='git pull'
+#alias gu='git push origin HEAD || (notify "push failed" "Git" && false)'
+alias gp='git push'
+alias gpru='gp &&  rake && gu'
 alias gri='git rebase -i origin/master^'
 alias grc='git rebase --continue'
 

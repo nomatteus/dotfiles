@@ -1,6 +1,6 @@
 alias g='git'
 
-alias gi='git init && printf ".DS_Store\nThumbs.db\n" >> .gitignore && git add .gitignore'
+alias gi='git init && printf ".DS_Store\nThumbs.db\n" >> .gitignore && git add .gitignore && git commit -qm "Added standard .gitignore." && gl'
 
 
 # http://www.jukie.net/~bart/blog/pimping-out-git-log
@@ -15,7 +15,7 @@ alias gds='git diff --cached'
 complete -o default -o nospace -F _git_diff gds
 alias gdh='git diff HEAD'
 
-alias gdm='gda master...'
+alias gdm='gd master...'
 
 alias ga='git add'
 complete -o default -o nospace -F _git_add ga
@@ -39,7 +39,11 @@ alias grc='git rebase --continue'
 
 alias gb='git branch'
 complete -o default -o nospace -F _git_branch gb
+alias gbr='git branch -r'
 alias gba='git branch -a'
+alias gbdm='git branch --merged | grep -v "*" | xargs -n 1 git branch -d'
+
+alias grpo='git remote prune origin'
 
 alias gitx='gitx --all'
 

@@ -3,11 +3,22 @@ for a in `ls $HOME/.bash_profile.d/*.sh`; do
 done
 
 #export VISUAL=`first_of "mate -w" "nano -w" vi`
-export VISUAL=`first_of "subl -w" "mate -w" "nano -w" vi`
-export EDITOR=$VISUAL
-export GIT_EDITOR=`first_of "mate -wl1" "nano -w" vi`
+#export VISUAL=`first_of "subl -w" "mate -w" "nano -w" vi`
+#export EDITOR=$VISUAL
+#export GIT_EDITOR=`first_of "subl -w" "mate -wl1" "nano -w" vi`
+export VISUAL='subl -w'
+export EDITOR='subl -w'
+export GIT_EDITOR='subl -w'
 
 export PATH=~/bin:~/.gem/ruby/1.8/bin:~/.seeds/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:$PATH
+# http://www.thisisthegreenroom.com/2011/installing-python-numpy-scipy-matplotlib-and-ipython-on-lion/
+export PATH=/usr/local/share/python:/usr/local/bin/python:$PATH
+
+# This has been causing errors, so disabling. Will it screw up python stuff? 2012/10/31
+#VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
+#source /usr/local/bin/virtualenvwrapper.sh
+
+
 
 ulimit -n 10240
 

@@ -27,6 +27,8 @@ if [[ -s ~/.rvm/scripts/rvm ]] ; then source ~/.rvm/scripts/rvm ; fi
 # Get local IP (i.e. if it changes with DHCP)
 alias mylocalip="ifconfig | grep 'inet ' | grep -v '127.0.0.1\| 192.\| 172.' | cut -d \  -f2"
 
+alias ios="open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app"
+
 
 function timer() {
 	start=`date +'%s'`;
@@ -34,4 +36,7 @@ function timer() {
 	end=`date +'%s'`;
 	echo \*\*\* Task took `expr $end - $start` seconds to run.;
 }
+
+# Shortcuts
+alias twg='cd ~/Projects/twg/'
 
